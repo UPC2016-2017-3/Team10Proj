@@ -24,6 +24,8 @@ namespace hotel
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+
             SqlConnection sqdconn = new SqlConnection();
             sqdconn.ConnectionString = "Data Source=MYCOMPUTER\\SQLEXPRESS;Initial Catalog=hotel;Integrated Security=True";
             sqdconn.Open();
