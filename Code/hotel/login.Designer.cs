@@ -40,7 +40,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("楷体", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(310, 256);
+            this.button1.Location = new System.Drawing.Point(320, 280);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 38);
             this.button1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("楷体", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(133, 256);
+            this.button2.Location = new System.Drawing.Point(150, 280);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 38);
             this.button2.TabIndex = 1;
@@ -133,8 +133,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
     }
 }

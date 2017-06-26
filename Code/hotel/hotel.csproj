@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="checkin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="checkin.Designer.cs">
-      <DependentUpon>checkin.cs</DependentUpon>
-    </Compile>
     <Compile Include="checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,12 +59,6 @@
     </Compile>
     <Compile Include="parent.Designer.cs">
       <DependentUpon>parent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="room.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="room.Designer.cs">
-      <DependentUpon>room.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -86,17 +74,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="checkin.resx">
-      <DependentUpon>checkin.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="roomtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="roomtype.Designer.cs">
+      <DependentUpon>roomtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="roominformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="roominformation.Designer.cs">
+      <DependentUpon>roominformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reserve.Designer.cs">
+      <DependentUpon>reserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consumption.Designer.cs">
+      <DependentUpon>consumption.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="checkout.resx">
       <DependentUpon>checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="parent.resx">
       <DependentUpon>parent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="room.resx">
-      <DependentUpon>room.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -113,6 +119,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="roomtype.resx">
+      <DependentUpon>roomtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="roominformation.resx">
+      <DependentUpon>roominformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reserve.resx">
+      <DependentUpon>reserve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consumption.resx">
+      <DependentUpon>consumption.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

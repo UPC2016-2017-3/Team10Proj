@@ -12,6 +12,8 @@ namespace hotel
 {
     public partial class parent : Form
     {
+        DataSet myst = new DataSet();
+        SqlDataAdapter myda;
         protected CurrencyManager cmOrders;//用于数据导航控制
         public parent()
         {
@@ -74,10 +76,79 @@ namespace hotel
                 if (cmOrders.Count > 0)//立即从数据集中删除
                 {
                     cmOrders.RemoveAt(cmOrders.Position);
-                  //  da1.Update(dataSet11);
+                   myda.Update(myst);
                 }
                 else
                     MessageBox.Show("表中为空，已无可删除数据", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           /* string connStr = @"Data Source=MYCOMPUTER\SQLEXPRESS;Initial Catalog=hotel;Integrated Security=True";
+            DialogResult ret = MessageBox.Show("确定要删除记录吗？",
+                                               "删除",
+                                               MessageBoxButtons.OKCancel,
+                                               MessageBoxIcon.Question);
+            if (ret == DialogResult.Cancel)
+            {
+                return;
+            }
+            string _sql = "delete from XS where XH='" + stuXH.Text + "'";
+            SqlConnection conn = new SqlConnection(connStr);
+            SqlCommand cmd = new SqlCommand(_sql, conn);
+            try
+            {
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                ModifyForm_Load(null, null);
+                if (rows == 1)
+                {
+                    MessageBox.Show("删除成功！",
+                                    "提示",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }*/
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            bool canSubmit;
+            canSubmit = this.CheckNotNull();
+            if (canSubmit == false)//有非空值字段为空，不允许提交
+            {
+                return;
+            }
+            cmOrders.EndCurrentEdit();
+            if (myst.GetChanges() != null)
+            {
+                try
+                {
+                    myda.Update(myst);
+                    SetModifyMode(false);
+                }
+                catch (Exception express)
+                {
+                    MessageBox.Show(express.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    myst.RejectChanges();
+                }
+            }
+            return;
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            try
+				{
+					cmOrders.CancelCurrentEdit();  //取消编辑
+					SetModifyMode(false);
+				}
+				catch(Exception express)
+				{
+					MessageBox.Show(express.ToString(),"提示",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				}
+				return;
+			}
         }
     }
-}
+

@@ -18,7 +18,8 @@ namespace hotel
             Application.Run(new login());
           if (main.isRunMain == true)
             {
-                Application.Run(new main());
+                login my = new login();
+                Application.Run(new main(my));
             }
         }
     }

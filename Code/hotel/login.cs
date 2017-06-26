@@ -31,13 +31,14 @@ namespace hotel
             sqdconn.Open();
             SqlCommand sqlcomm= new SqlCommand();
             sqlcomm.Connection = sqdconn;
-            sqlcomm.CommandText = "select * from login  where login='"+textBox1.Text +"' and password='"+textBox2.Text +"'";
+            sqlcomm.CommandText = "select * from login  where user_name='"+textBox1.Text +"' and password='"+textBox2.Text +"'";
             sqlcomm.ExecuteNonQuery();
             SqlDataReader dr = sqlcomm.ExecuteReader();
             if (dr.Read())
             {
+                login my = new login();
               main.isRunMain = true; 
-                main M = new main();
+                main M = new main(my);
                 M.Show();
                 this.Close();
             }
